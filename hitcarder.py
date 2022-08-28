@@ -221,12 +221,12 @@ if __name__ == "__main__":
     username = os.environ['USERNAME']
     password = os.environ['PASSWORD']
 
-    ret, msg = main(username, password)
-    print(ret, msg)
-    if ret == 1:
-        time.sleep(5)
-        ret, msg = main(username, password)
-        print(ret, msg)
+#     ret, msg = main(username, password)
+#     print(ret, msg)
+#     if ret == 1:
+#         time.sleep(5)
+#         ret, msg = main(username, password)
+#         print(ret, msg)
 
     dingtalk_token = os.environ.get('DINGTALK_TOKEN')
     if dingtalk_token:
@@ -234,6 +234,7 @@ if __name__ == "__main__":
         print('send_dingtalk_message', ret)
 
     serverchan_key = os.environ.get('SERVERCHAN_KEY')
+    print("key", serverchan_key)
     if serverchan_key:
         ret = message.serverchan(msg, '', serverchan_key)
         print('send_serverChan_message', ret)
